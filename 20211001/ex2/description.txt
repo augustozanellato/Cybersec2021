@@ -4,5 +4,3 @@ The user uses the terminal and it has three variables.
  - input2: second integer number
  - type of operation: a number associated to the operation
     (e.g., 0 for the addition)
-
-  
