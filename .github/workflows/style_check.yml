@@ -1,0 +1,16 @@
+name: Check code style
+
+on:
+  push
+
+jobs:
+  check:
+    name: Check code style
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: 'Install pre-commit'
+        run: 'pip install pre-commit'
+      - name: 'Run pre-commit on all files'
+        run: '/home/runner/.local/bin/pre-commit run --all-files'
