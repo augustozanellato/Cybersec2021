@@ -1,6 +1,6 @@
 import string
 from random import choices
 
-alphabet = string.ascii_letters + string.digits + string.punctuation
+alphabet = string.ascii_letters + string.digits
 
-print("".join(choices(alphabet, k=int(input("Inserisci una lunghezza: ")))))
+print("".join(choices(alphabet, k=10)))
