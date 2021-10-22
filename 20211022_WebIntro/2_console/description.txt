@@ -1,0 +1,7 @@
+You control the browser
+
+http://127.0.0.1:8081
+
+(use ./docker_run.sh to run the server locally)
+
+RULES: you don't have access to web
