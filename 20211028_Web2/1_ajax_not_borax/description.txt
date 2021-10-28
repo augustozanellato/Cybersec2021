@@ -1,0 +1,5 @@
+http://127.0.0.1:8083/
+
+(use ./docker_run.sh to run the server locally)
+
+Rules: you cannot access the 'web' folder, but you can use online tools.

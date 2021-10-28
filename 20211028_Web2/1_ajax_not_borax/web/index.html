@@ -1,0 +1,61 @@
+
+<!Doctype html>
+<html>
+<head>
+  <title>Login</title>
+  <meta charset='utf-8'/>
+  <!-- just including jquery, you can ignore the next line-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Now I will include a hash function, you don't have to understand how it works to solve the challenge -->
+  <script src="md5.js"></script>
+</head>
+  <body>
+    <div>
+      <h1>Welcome to my website, Login to see more</h1>
+      <p>This time I'll be sure to use encryption</p>
+      <form>
+        <label for="name">Username</label>
+        <input id="name" type='text' name='Name' placeholder="username"/>
+        <label for='pass'>Password</label>
+        <input id='pass' type="password" name="pass" placeholder="password"/>
+      </form>
+      <br/>
+      <span id="output"></span>
+    </div>
+    <script type="text/javascript" type="text">
+      // For element with id='name', when a key is pressed run this function
+      $('#name').on('keypress',function(){
+        // get the value that is in element with id='name'
+        var that = $('#name');
+        $.ajax('webhooks/get_username.php?username='+that.val(),{
+        }).done(function(data){ // once the request has been completed, run this function
+            data = data.replace(/(\r\n|\n|\r)/gm,""); // remove newlines from returned data
+            if(data==MD5(that.val())){ // see if the data matches what the user typed in
+              that.css('border', '1px solid green'); // if it matches turn the border green
+              $('#output').html('Username is correct'); // state that the user was correct
+            }else{ // if the user typed in something incorrect
+              that.css('border', ''); // set input box border to default color
+              $('#output').html('Username is incorrect'); // say the user was incorrect
+            }
+          }
+        );
+      });
+      // dito ^ but for the password input now
+      $('#pass').on('keypress', function(){
+        var that = $('#pass');
+        $.ajax('webhooks/get_pass.php?username='+$('#name').val(),{
+        }).done(function(data){
+            data = data.replace(/(\r\n|\n|\r)/gm,""); // remove newlines from data
+            if(MD5(data)==MD5(that.val())){
+              that.css('border', '1px solid green');
+              $('#output').html(data);
+            }else{
+              that.css('border', '');
+              $('#output').html('Password is incorrect');
+            }
+          }
+        );
+      });
+    </script>
+  </body>
+</html>

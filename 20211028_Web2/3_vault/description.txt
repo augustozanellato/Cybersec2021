@@ -1,0 +1,5 @@
+You don't have access to any file.
+The challenge can be resolved only browser side.
+
+To lunch the app, run the following
+- docker-compose up
