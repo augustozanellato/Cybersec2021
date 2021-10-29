@@ -36,9 +36,9 @@ print(f"tester={tester_md5 == control}")
 
 ## Flag
 ```
-encryptCTF%7By0u_c4nt_U53_m3%7D
+encryptCTF%7B4lwa4y5_Ch3ck_7h3_c00ki3s%7D
 ```
 Which after url decode becomes
 ```
-encryptCTF{y0u_c4nt_U53_m3}
+encryptCTF{4lwa4y5_Ch3ck_7h3_c00ki3s}
 ```
