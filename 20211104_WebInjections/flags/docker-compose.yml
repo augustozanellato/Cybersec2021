@@ -1,0 +1,7 @@
+version: '3'
+services:
+  flags:
+    build: ./data/
+    restart: unless-stopped
+    ports:
+      - "1235:80"

@@ -1,0 +1,11 @@
+version: '3'
+services:
+    challenge:
+        build: .
+        container_name: chall15-smartcat
+        ports:
+            - 8090:8090
+        restart: always
+        volumes:
+            - ./chall:/chall:ro
+        command: uwsgi --http 0.0.0.0:8090 --wsgi-file index.py --master --threads 4
