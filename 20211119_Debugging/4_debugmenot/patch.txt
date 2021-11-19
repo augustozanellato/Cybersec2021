@@ -1,0 +1,61 @@
+2c2
+< debugmenot:     file format elf64-x86-64
+---
+> debugmenot_patched:     file format elf64-x86-64
+650c650
+<     1985:	74 15                	je     199c <detect+0x4c>
+---
+>     1985:	74 13                	je     199a <detect+0x4a>
+755c755
+<     1adb:	b8 01 00 00 00       	mov    $0x1,%eax
+---
+>     1adb:	b8 00 00 00 00       	mov    $0x0,%eax
+769c769,770
+<     1b0c:	0f 46 c2             	cmovbe %edx,%eax
+---
+>     1b0c:	31 c0                	xor    %eax,%eax
+>     1b0e:	90                   	nop
+868c869
+<     1c56:	b8 01 00 00 00       	mov    $0x1,%eax
+---
+>     1c56:	b8 00 00 00 00       	mov    $0x0,%eax
+903c904,906
+<     1cef:	41 0f 44 c5          	cmove  %r13d,%eax
+---
+>     1cef:	31 c0                	xor    %eax,%eax
+>     1cf1:	90                   	nop
+>     1cf2:	90                   	nop
+922c925,926
+<     1d4a:	41 0f 44 c5          	cmove  %r13d,%eax
+---
+>     1d4a:	0f 44 c0             	cmove  %eax,%eax
+>     1d4d:	90                   	nop
+932c936
+<     1d79:	01 c0                	add    %eax,%eax
+---
+>     1d79:	31 c0                	xor    %eax,%eax
+942c946
+<     1da2:	01 c0                	add    %eax,%eax
+---
+>     1da2:	31 c0                	xor    %eax,%eax
+958c962
+<     1deb:	01 c0                	add    %eax,%eax
+---
+>     1deb:	31 c0                	xor    %eax,%eax
+1040c1044
+<     1efd:	b8 02 00 00 00       	mov    $0x2,%eax
+---
+>     1efd:	b8 00 00 00 00       	mov    $0x0,%eax
+1232c1236,1237
+<     21dd:	44 89 e8             	mov    %r13d,%eax
+---
+>     21dd:	31 c0                	xor    %eax,%eax
+>     21df:	90                   	nop
+1339c1344
+<     235b:	ba 02 00 00 00       	mov    $0x2,%edx
+---
+>     235b:	ba 00 00 00 00       	mov    $0x0,%edx
+1431c1436
+<     2492:	01 c0                	add    %eax,%eax
+---
+>     2492:	31 c0                	xor    %eax,%eax

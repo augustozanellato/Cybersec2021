@@ -1,0 +1,8 @@
+2c2
+< getit:     file format elf64-x86-64
+---
+> getit_patched:     file format elf64-x86-64
+239c239
+<   40088c:	e8 af fd ff ff       	call   400640 <fseek@plt>
+---
+>   40088c:	e9 1b 00 00 00       	jmp    4008ac <main+0x156>

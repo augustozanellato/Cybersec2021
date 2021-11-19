@@ -1,0 +1,8 @@
+2c2
+< funmail2.0:     file format elf32-i386
+---
+> funmail2.0_patched:     file format elf32-i386
+615c615
+<  b98:	e8 13 fb ff ff       	call   6b0 <printWelcome>
+---
+>  b98:	e8 8f fe ff ff       	call   a2c <showEmails>

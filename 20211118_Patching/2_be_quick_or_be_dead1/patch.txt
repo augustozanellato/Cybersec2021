@@ -1,0 +1,18 @@
+2c2
+< be-quick-or-be-dead-1:     file format elf64-x86-64
+---
+> be-quick-or-be-dead-1_patched:     file format elf64-x86-64
+294,295c294,303
+<   400840:	b8 00 00 00 00       	mov    $0x0,%eax
+<   400845:	e8 f8 fe ff ff       	call   400742 <set_timer>
+---
+>   400840:	90                   	nop
+>   400841:	90                   	nop
+>   400842:	90                   	nop
+>   400843:	90                   	nop
+>   400844:	90                   	nop
+>   400845:	90                   	nop
+>   400846:	90                   	nop
+>   400847:	90                   	nop
+>   400848:	90                   	nop
+>   400849:	90                   	nop

@@ -1,0 +1,8 @@
+2c2
+< BankAcc:     formato del file elf64-x86-64
+---
+> BankAcc_patched:     formato del file elf64-x86-64
+1084c1084
+<   401e84:	75 5d                	jne    401ee3 <main+0xf1>
+---
+>   401e84:	66 90                	xchg   %ax,%ax
