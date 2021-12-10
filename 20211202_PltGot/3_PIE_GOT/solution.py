@@ -1,7 +1,10 @@
 from pwn import *
 
-e = ELF("./challenge")
-p = e.process()
+context.binary = "./challenge"
+p = process()
+
+e = context.binary
+p = process()
 
 main_address = p.u32()
 
