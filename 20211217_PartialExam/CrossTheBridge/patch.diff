@@ -1,0 +1,12 @@
+2c2
+< CrossTheBridge:     formato del file elf64-x86-64
+---
+> CrossTheBridge_patched:     formato del file elf64-x86-64
+711c711
+<     1ae8:	75 74                	jne    1b5e <is_someone_cheating+0xa0>
+---
+>     1ae8:	eb 74                	jmp    1b5e <is_someone_cheating+0xa0>
+766c766
+<     1bba:	0f b6 44 05 f5       	movzbl -0xb(%rbp,%rax,1),%eax
+---
+>     1bba:	b8 4c 00 00 00       	mov    $0x4c,%eax
